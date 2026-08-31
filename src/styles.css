@@ -1,0 +1,314 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * AutoClip AI design system — Skeuomorphism Modern.
+ * Brand: Nugroho Keren Dev. Warm parchment surfaces, olive-sage accents,
+ * layered shadows that read as physically raised or engraved. Never
+ * hardcode colors in components — everything routes through these tokens.
+ */
+
+@theme inline {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+
+  --radius-sm: calc(var(--radius) - 12px);
+  --radius-md: calc(var(--radius) - 8px);
+  --radius-lg: calc(var(--radius) - 5px);
+  --radius-xl: calc(var(--radius) - 2px);
+  --radius-2xl: var(--radius);
+  --radius-3xl: calc(var(--radius) + 6px);
+  --radius-4xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --shadow-glow:
+    inset 0 1px 0 0 color-mix(in oklch, white 30%, transparent),
+    0 1px 2px 0 var(--shadow-tint),
+    0 26px 44px -24px var(--shadow-tint);
+  --shadow-lift:
+    inset 0 1px 0 0 color-mix(in oklch, white 35%, transparent),
+    inset 0 -10px 16px -12px color-mix(in oklch, black 12%, transparent),
+    0 10px 20px -12px var(--shadow-tint);
+}
+
+:root {
+  --radius: 1.1rem;
+
+  --background: #f1ecdd;
+  --foreground: #2b3324;
+  --card: #fbf7ec;
+  --card-foreground: #2b3324;
+  --popover: #fbf7ec;
+  --popover-foreground: #2b3324;
+  --primary: #5b7f4b;
+  --primary-foreground: #fbf7ec;
+  --secondary: #e6e0c9;
+  --secondary-foreground: #3a4432;
+  --muted: #e9e3d1;
+  --muted-foreground: #74705d;
+  --accent: #dde6cc;
+  --accent-foreground: #33452b;
+  --destructive: #af4a3a;
+  --destructive-foreground: #fbf7ec;
+  --success: #4f8f52;
+  --success-foreground: #fbf7ec;
+  --border: #d9cfb2;
+  --input: #d9cfb2;
+  --ring: #5b7f4b;
+
+  --surface: #fbf7ec;
+  --surface-strong: #fffdf6;
+  --hairline: rgb(43 51 36 / 14%);
+  --shadow-tint: rgb(43 51 36 / 30%);
+  --grid-line: rgb(43 51 36 / 7%);
+
+  --chart-1: #33452b;
+  --chart-2: #5b7f4b;
+  --chart-3: #7fa36a;
+  --chart-4: #a9c99a;
+  --chart-5: #d3e3c6;
+
+  --sidebar: #ece5cf;
+  --sidebar-foreground: #2b3324;
+  --sidebar-primary: #5b7f4b;
+  --sidebar-primary-foreground: #fbf7ec;
+  --sidebar-accent: #dde6cc;
+  --sidebar-accent-foreground: #33452b;
+  --sidebar-border: #d9cfb2;
+  --sidebar-ring: #5b7f4b;
+}
+
+.dark {
+  --background: #1a1f16;
+  --foreground: #ede7d6;
+  --card: #242b1f;
+  --card-foreground: #ede7d6;
+  --popover: #242b1f;
+  --popover-foreground: #ede7d6;
+  --primary: #9fc98d;
+  --primary-foreground: #182016;
+  --secondary: #2e3527;
+  --secondary-foreground: #ede7d6;
+  --muted: #2b3123;
+  --muted-foreground: #a7a08a;
+  --accent: #37402c;
+  --accent-foreground: #ede7d6;
+  --destructive: #c4685a;
+  --destructive-foreground: #182016;
+  --success: #7fbe72;
+  --success-foreground: #182016;
+  --border: rgb(237 231 214 / 14%);
+  --input: rgb(237 231 214 / 16%);
+  --ring: #9fc98d;
+
+  --surface: #242b1f;
+  --surface-strong: #2b331f;
+  --hairline: rgb(237 231 214 / 12%);
+  --shadow-tint: rgb(0 0 0 / 65%);
+  --grid-line: rgb(237 231 214 / 6%);
+
+  --chart-1: #d3e3c6;
+  --chart-2: #a9c99a;
+  --chart-3: #7fa36a;
+  --chart-4: #5b7f4b;
+  --chart-5: #33452b;
+
+  --sidebar: #1f2419;
+  --sidebar-foreground: #ede7d6;
+  --sidebar-primary: #9fc98d;
+  --sidebar-primary-foreground: #182016;
+  --sidebar-accent: #37402c;
+  --sidebar-accent-foreground: #ede7d6;
+  --sidebar-border: rgb(237 231 214 / 14%);
+  --sidebar-ring: #9fc98d;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background-color: var(--color-foreground);
+    color: var(--color-background);
+  }
+}
+
+/* Raised panel: a "molded" card that catches light on top and drops a soft
+   shadow beneath it, like a physical tile sitting above the background. */
+@utility glass {
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in oklch, var(--surface) 100%, white 8%),
+    var(--surface)
+  );
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lift);
+}
+
+@utility glass-strong {
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in oklch, var(--surface-strong) 100%, white 10%),
+    var(--surface-strong)
+  );
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Engraved / pressed-in surface, for form fields, tracks and grooves. */
+@utility inset-well {
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in oklch, var(--background) 100%, black 5%),
+    color-mix(in oklch, var(--background) 100%, white 4%)
+  );
+  border: 1px solid var(--border);
+  box-shadow:
+    inset 0 2px 4px 0 var(--shadow-tint),
+    inset 0 1px 0 0 color-mix(in oklch, black 8%, transparent);
+}
+
+/* A glossy, tactile knob — switch thumbs, slider handles. */
+@utility knob-gloss {
+  background-image: radial-gradient(
+    120% 140% at 30% 20%,
+    color-mix(in oklch, white 55%, var(--card)) 0%,
+    var(--card) 70%
+  );
+  box-shadow:
+    0 1px 0 0 color-mix(in oklch, white 40%, transparent) inset,
+    0 2px 3px 0 var(--shadow-tint),
+    0 1px 1px 0 var(--shadow-tint);
+}
+
+/* Press-to-actuate: raised at rest, sinks in on click like a real button. */
+@utility skeuo-press {
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    filter 120ms ease;
+  &:hover {
+    filter: brightness(1.035);
+  }
+  &:active {
+    transform: translateY(1px);
+    filter: brightness(0.98);
+  }
+}
+
+@utility grid-bg {
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--grid-line) 0px,
+    var(--grid-line) 1px,
+    transparent 1px,
+    transparent 7px
+  );
+}
+
+@utility text-gradient {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-foreground) 0%,
+    var(--color-primary) 100%
+  );
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 1px 0 color-mix(in oklch, white 45%, transparent));
+}
+
+@utility hairline {
+  border: 1px solid var(--hairline);
+}
+
+@utility focus-ring {
+  outline: none;
+  &:focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@utility shimmer {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(90deg, transparent, var(--surface-strong), transparent);
+    animation: shimmer 1.8s infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
